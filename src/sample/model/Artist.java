@@ -25,7 +25,7 @@ public class Artist {
         return name.get();
     }
     
-    public void setName(String  name) {
+    public void setName(String name) {
         this.name.set(name);
     }
 }
