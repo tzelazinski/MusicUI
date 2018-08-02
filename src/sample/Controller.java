@@ -17,6 +17,7 @@ public class Controller {
         Task<ObservableList<Artist>> task = new GetAllArtistsTask();
         artistTable.itemsProperty().bind(task.valueProperty());
         
+        new Thread(task).start();
     }
 }
 
