@@ -7,7 +7,7 @@ import java.util.List;
 public class Datasource {
     
     public static final String DB_NAME = "music.db";
-    public static final String CONNECTION_STRING = "jdbc:sqlite:C:\\Users\\tomasz.zelazinski\\IdeaProjects\\MusicUI\\" + DB_NAME;
+    public static final String CONNECTION_STRING = "jdbc:sqlite:C:\\Users\\tzela\\Documents\\Programowanie\\Java\\UdemyProjekty\\MusicUI\\" + DB_NAME;
     
     public static final String TABLE_ALBUMS = "albums";
     public static final String COLUMN_ALBUM_ID = "_id";
@@ -170,6 +170,11 @@ public class Datasource {
             
             List<Artist> artists = new ArrayList<>();
             while (results.next()) {
+                try{
+                    Thread.sleep(20);
+                }catch(InterruptedException e){
+                    System.out.println("Interrupted: " + e.getMessage());
+                }
                 Artist artist = new Artist();
                 artist.setId(results.getInt(INDEX_ARTIST_ID));
                 artist.setName(results.getString(INDEX_ARTIST_NAME));
